@@ -62,20 +62,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dal_Laag\Dal.csproj">
-      <Project>{ce3df553-2895-4f24-b596-e17b43356f17}</Project>
-      <Name>Dal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic\Logic.csproj">
-      <Project>{5C478442-4E9F-40E9-8AC5-DB954402E2DE}</Project>
-      <Name>Logic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modellen\Modellen.csproj">
-      <Project>{1a89d1ec-d2f4-4f9c-b78a-9afec48fae4a}</Project>
-      <Name>Modellen</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
