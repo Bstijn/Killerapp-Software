@@ -1,0 +1,18 @@
+﻿@using killerAppSemester2.Models
+@model List<Optie>
+@{ 
+    ViewBag.Title = "VOpties";
+}
+
+<h2>Opties toevoegen</h2>
+@foreach (Optie o in Model)
+{
+<ul>
+    <li>@o.Naam</li>
+    <li>@o.Beschrijving</li>
+    <li>Prijs €@o.Prijs</li>
+    <li><img src=@o.Filepath /></li>
+    <li><a href=@Url.Action("VOptie", new { id = o.Id })>Voeg toe aan uw auto</a></li>
+</ul>
+}
+<h5><a href=@Url.Action("Stop")>terug</a></h5>

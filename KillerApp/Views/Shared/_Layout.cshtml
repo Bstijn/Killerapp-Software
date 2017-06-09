@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body style="padding-top:0px !important;">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href=@Url.Action("Index","Home")>Car Configurator</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href=@Url.Action("Index","Home")>Home</a></li>
+                <li><a href=@Url.Action("OverzichtMerk","Home")>Overzicht</a></li>
+                @if (Session["user"] != null)
+                {
+                    <li><a href=@Url.Action("Index","User")>uw autos</a></li>
+                    <li><a href=@Url.Action("Logout","Home")>Log uit</a></li>
+                    
+                }
+                else
+                {
+                    <li><a href=@Url.Action("Login","User")>Log in</a></li>
+                    <li><a href=@Url.Action("Registreer", "Home")>Registreer</a></li>
+                }
+
+
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Carconfigurator</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <style>
+        ul {
+            list-style-type: none !important;
+        }
+    </style>
+</body>
+</html>

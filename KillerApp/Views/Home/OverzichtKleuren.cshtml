@@ -1,0 +1,15 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "OverzichtKleuren";
+}
+
+<h2>OverzichtKleuren</h2>
+<p>
+    <ul>
+        @foreach (string s in Model)
+        {
+            <li>@s</li>
+        }
+    </ul>
+</p>
+<button class="btn-default"><a href=@Url.Action("OverzichtMerk")>terug naar overzicht</a></button>

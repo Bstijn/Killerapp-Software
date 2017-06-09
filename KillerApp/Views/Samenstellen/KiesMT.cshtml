@@ -1,0 +1,35 @@
+﻿@using killerAppSemester2.Models
+@model List<MotorTransmissie>
+@{
+    ViewBag.Title = "Kies Uitovering";
+}
+
+
+<h2>Kies de Motor en Transmissie</h2>
+<p>
+    @foreach (MotorTransmissie u in Model)
+    {
+        <ul>
+            <li>
+                <a href=@Url.Action("KiesKleur", new { @naam = u.Naam })>
+                    @u.Naam
+                </a>
+            </li>
+            <li>Liter\100km: @u.LiterPer100</li>
+            <li>paardenkracht: @(u.Paardenkracht)pk</li>
+            @if (u.Prijs == 0)
+            {
+                <li>geen extra kosten</li>
+            }
+            else
+            {
+                <li>Extra kosten zijn €@u.Prijs </li>
+            }
+        </ul>
+    }
+</p>
+<p>
+    <button>
+        <a href=@Url.Action("Cancel")>Stop met samenstellen</a>
+    </button>
+</p>

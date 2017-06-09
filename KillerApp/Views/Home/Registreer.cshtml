@@ -1,0 +1,22 @@
+﻿@using killerAppSemester2.Models
+@model User
+@{
+    ViewBag.Title = "Registreer";
+}
+
+<h2>Registreer</h2>
+
+<form method="post">
+    <p>
+        <label for="Gebruikersnaam">Gebruikersnaam: </label>
+        <input type="text" name="Gebruikersnaam" />
+    </p>
+    <p>
+        <label for="Wachtwoord">Wachtwoord: </label>
+        <input type="text" name="Wachtwoord" />
+    </p>
+    <p>
+        <label for="Bevestig"></label>
+        <input name="Bevestig" type="submit" class="btn-group-lg" value="Registreer" />
+    </p>
+</form>

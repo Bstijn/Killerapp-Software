@@ -1,0 +1,29 @@
+﻿@using killerAppSemester2.Models 
+@model List<Auto>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Uw Auto's</h2>
+
+<p>
+    <ul>@foreach (Auto a in Model)
+    {
+        <li>@a.Naam 
+        <button class="btn-default"><a href=@Url.Action("Details","User", new { @id = a.Id })>datails</a></button>
+        <button class="btn-default"><a href=@Url.Action("Verwijder","User", new { @id = a.Id })>Verwijder Auto</a></button>
+        </li>
+    }
+    </ul>
+
+</p>
+
+<p>
+    <button class="btn-default"><a href=@Url.Action("NieuweAuto")>Nieuwe Auto samenstellen</a></button>
+</p>
+
+<style>
+    button{
+        margin-left: 25px !important;
+    }
+</style>

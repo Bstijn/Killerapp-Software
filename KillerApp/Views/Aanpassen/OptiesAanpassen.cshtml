@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "OptiesAanpassen";
+}
+
+<h2>Wat wilt u aanpassen</h2>
+<p>
+    <ul>
+        <li><a href=@Url.Action("MTAanpassen") class="btn btn-default" style="width:300px; margin-bottom:2%">Pas MotorTransmissie aan</a></li>
+        <li><a href=@Url.Action("UitvoeringAanpassen") class="btn btn-default" style="width:300px; margin-bottom:2%">Pas Uitvoering aan</a></li>
+        <li><a href=@Url.Action("ModelAanpassen") class="btn btn-default" style="width:300px; margin-bottom:2%">Pas Model aan</a></li>
+
+    </ul>
+</p>
+<p>
+    <ul>
+        <li style="margin-top:10%; color:red"><strong>Waarschuwing!</strong></li>
+        <li>Als je de uitvoering of model wilt aanpassen kunnen bepaalde opties op je auto vervallen.</li>
+        <li>Dit komt doordat bepaalde opties alleen mogelijk zijn voor bepaalde uitvoeringen</li>
+    </ul>
+</p>
+

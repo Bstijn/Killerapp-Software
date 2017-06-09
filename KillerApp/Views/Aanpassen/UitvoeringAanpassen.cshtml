@@ -1,0 +1,26 @@
+﻿@using killerAppSemester2.Models
+@model List<Uitvoering>
+@{
+    ViewBag.Title = "UitvoeringAanpassen";
+}
+
+<h2>Uitvoering Aanpassen</h2>
+
+<h3>Gebruikt Nu</h3>
+<ul>
+    <li>@Model[0].Naam</li>
+    <li>@Model[0].Beschrijving</li>
+    <li>Prijs €@Model[0].Prijs</li>
+</ul>
+
+<h3>Kan vervangen door</h3>
+@for (int i = 1; i < Model.Count; i++)
+{
+    <ul>
+        <li>@Model[i].Naam</li>
+        <li>@Model[i].Beschrijving</li>
+        <li>Prijs €@Model[i].Prijs</li>
+        <li><a href=@Url.Action("VervangUV", new {@UVNaam = Model[i].Naam })>Vervang</a> Huidige door bovenstaande</li>
+    </ul>
+}
+<h4><a href=@Url.Action("Back","Aanpassen")>Terug</a></h4>

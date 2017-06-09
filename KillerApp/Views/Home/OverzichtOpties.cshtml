@@ -1,0 +1,21 @@
+﻿@using killerAppSemester2.Models
+@model List<Optie>
+@{
+    ViewBag.Title = "OverzichtOpties";
+}
+<p>
+    <h2>OverzichtOpties</h2>
+    @foreach (Optie o in Model)
+    {
+        <ul>
+            <li>@o.Naam</li>
+            <li>@o.Beschrijving</li>
+            <li>Prijs €@o.Prijs</li>
+            <li><img src=@o.Filepath /></li>
+        </ul>
+    }
+</p>
+<p>
+    <h2>Overzicht</h2>
+    <button class="btn-default"><a href=@Url.Action("OverzichtMerk")>terug naar overzicht</a></button>
+</p>

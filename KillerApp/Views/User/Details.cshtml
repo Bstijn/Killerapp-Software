@@ -1,0 +1,55 @@
+﻿@using killerAppSemester2.Models
+@model Auto
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2>Details van @Model.Naam</h2>
+
+<h3>Merk</h3>
+<ul>
+    <li>@Model.merk.Naam</li>
+    <li><img src=@Model.merk.Filenaam style=height:100px; /></li>
+</ul>
+<h3>Model</h3>
+<ul>
+    <li>@Model.Model.Naam</li>
+    <li>Prijs is €@Model.Model.Prijs</li>
+    <li><img src=@Model.Model.Filenaam /></li>
+</ul>
+<h3>Uitvoering</h3>
+<ul>
+    <li>@Model.Uitvoering.Naam</li>
+    <li>prijs is €@Model.Uitvoering.Prijs</li>
+    <li>@Model.Uitvoering.Beschrijving</li>
+</ul>
+<h3>MotorTransmissie</h3>
+<ul>
+    <li>@Model.MotorTransmissie.Naam</li>
+    <li>prijs is €@Model.MotorTransmissie.Prijs</li>
+    <li>Liter\100km: @Model.MotorTransmissie.LiterPer100</li>
+    <li>paardenkracht: @(Model.MotorTransmissie.Paardenkracht)pk</li>
+</ul>
+<h3>Kleur</h3>
+<ul>
+    <li>Kleur is @Model.Kleur</li>
+</ul>
+
+@if (Model.opties.Count != 0)
+{
+    <h3>Opties</h3>
+    <ul>
+        @foreach (Optie o in Model.opties)
+        {
+        <li>@o.Naam</li>
+        <li>@o.Beschrijving</li>
+        <li>prijs is €@o.Prijs</li>
+        <li><img src=@o.Filepath /></li>
+        }
+    </ul>
+}
+<h2 style="color:red">TotaalPrijs: €@Model.Prijs</h2>
+
+<h3><a href=@Url.Action("OptiesAanpassen","Aanpassen")>Pas iets aan</a></h3>
+<h3><a href=@Url.Action("VoegExtrasToe")>Beheer Opties</a></h3>

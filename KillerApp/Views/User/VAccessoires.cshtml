@@ -1,0 +1,18 @@
+﻿@using killerAppSemester2.Models
+@model List<Accessoire>
+@{
+    ViewBag.Title = "Vaccessoires";
+}
+
+<h2>Accessoire toevoegen</h2>
+@foreach (Accessoire a in Model)
+{
+    <ul>
+        <li>@a.Naam</li>
+        <li>@a.Beschrijving</li>
+        <li>Prijs €@a.Prijs</li>
+        <li><img src=@a.Filepath /></li>
+        <li><a href=@Url.Action("VAccessoire", new { id = a.Id })>Voeg toe aan uw auto</a></li>
+    </ul>
+}
+<h5><a href=@Url.Action("Stop")>terug</a></h5>

@@ -1,0 +1,52 @@
+﻿@using killerAppSemester2.Models
+@model List<Model>
+@{
+    ViewBag.Title = "OverzichtModel";
+}
+
+<style>
+    div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        margin-right: 10%;
+        margin-bottom: 20px;
+    }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+    footer{
+        margin-top:60%;
+    }
+</style>
+<p>
+    <h2>OverzichtModel</h2>
+
+    @foreach (Model m in Model)
+    {
+        <div class="gallery">
+            <a href=@Url.Action("OverzichtUitvoering", new { @naam = m.Naam })>
+                <img src=@m.Filenaam width="300" height="200">
+            </a>
+            <div class="desc">@m.Naam, @m.Beschrijving , @m.Prijs</div>
+        </div>
+    }
+</p>
+<p>
+    <h2>Overzicht</h2>
+        <ul>
+            <li><button class="btn-default"><a href=@Url.Action("OverzichtKleuren")>Kleuren</a></button></li>
+        </ul>
+</p>

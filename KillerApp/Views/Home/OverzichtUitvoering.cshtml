@@ -1,0 +1,36 @@
+﻿@using killerAppSemester2.Models
+@model List<Uitvoering>
+@{
+    ViewBag.Title = "OverzichtUitvoering";
+}
+
+<p>
+    <h2>OverzichtUitvoeringen</h2>
+
+    @foreach (Uitvoering u in Model)
+    {
+        <ul>
+            <li>
+                <a href=@Url.Action("OverzichtMT", new { @naam = u.Naam })>
+                    @u.Naam
+                </a>
+            </li>
+            <li>@u.Beschrijving</li>
+            @if (u.Prijs == 0)
+            {
+                <li>geen extra kosten</li>
+            }
+            else
+            {
+                <li>Extra kosten zijn €@u.Prijs </li>
+            }
+        </ul>
+    }
+</p>
+<p>
+    <h2>Overzicht</h2>
+    <ul>
+        <li><button class="btn-default"><a href=@Url.Action("OverzichtKleuren")>Kleuren</a></button></li>
+
+    </ul>
+</p>

@@ -1,0 +1,53 @@
+﻿@using killerAppSemester2.Models
+@model List<Model>
+@{
+    ViewBag.Title = "KiesMerk";
+}
+<style>
+    div.gallery {
+        margin: 5px;
+        border: 1px solid #ccc;
+        float: left;
+        width: 180px;
+        margin-right: 10%;
+        margin-bottom: 20px;
+    }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 60%;
+    }
+</style>
+
+<h2>Kies een van de onderstaande merken.</h2>
+
+
+<p>
+    @foreach (Model m in Model)
+    {
+        <div class="gallery">
+            <a href=@Url.Action("KiesUitvoering", new { @naam = m.Naam })>
+                <img src=@m.Filenaam width="300" height="200">
+            </a>
+            <div class="desc">@m.Naam, @m.Beschrijving , @m.Prijs</div>
+        </div>
+    }
+</p>
+<p>
+    <button>
+        <a href=@Url.Action("Cancel")>Stop met samenstellen</a>
+    </button>
+</p>

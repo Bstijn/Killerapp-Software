@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    body {
+        background-image: url('http://media.boingboing.net/wp-content/uploads/2016/11/hero_car.gif');
+        background-size: cover;
+    }
+    footer{
+        color:white;
+    }
+</style>
+
+<h1>
+    @if (Session["user"] == null)
+    {
+        <a href=@Url.Action("Login","User") style="color:white !important; position:center !important;">stel je eigen droom auto samen</a>
+    }
+    else
+    {
+        <a href=@Url.Action("Index","User") style="color:white !important; position:center !important;">stel je eigen droom auto samen</a>
+    }
+</h1>

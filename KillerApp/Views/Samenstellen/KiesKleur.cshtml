@@ -1,0 +1,19 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "KiesKleur";
+}
+
+<h2>Kies een kleur</h2>
+<p>
+    <ul>
+        @foreach (string s in Model)
+        {
+            <li><a href=@Url.Action("VoerNaamIn", new {@naam = @s })>@s</a></li>
+        }
+    </ul>
+</p>
+<p>
+    <button>
+        <a href=@Url.Action("Cancel")>Stop met samenstellen</a>
+    </button>
+</p>
